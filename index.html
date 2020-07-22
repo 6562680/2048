@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+
+        <style>
+            html {
+                margin: 0;
+                padding: 0;
+                font-size: 100%;
+                color: #776e65;
+                font-family: sans-serif;
+            }
+
+
+            .clearfix {
+                overflow: auto;
+            }
+
+            .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+
+            #js-templates {
+                display: none;
+            }
+
+
+            .game {
+                display: block;
+                width: 60%;
+                margin: 0 auto;
+            }
+
+            .game__scene {
+                width: 22rem;
+                background: #bbada0;
+                margin: 0 auto;
+                padding: .25rem;
+                border-radius: 0.5rem;
+
+                text-align: center;
+                font-size: 280%;
+                font-weight: bold;
+            }
+
+            .game__overlay {
+                position: relative;
+                box-sizing: border-box;
+                margin: .25rem;
+                width: 100%;
+            }
+
+            .game__box {
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                background: #eee4da;
+                border-radius: 0.5rem;
+            }
+
+            .game__box-bg {
+                float: left;
+                margin: 0.25rem;
+            }
+
+            .game__box-item {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: left .1s, top .1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="game js-game">
+                <div class="game__scene clearfix">
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+                    <div class="game__box game__box-bg"></div>
+
+                    <div class="game__overlay js-game__overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="js-templates">
+            <div class="game__box game__box-bg js-game__box"></div>
+            <div class="game__box game__box-item js-game__item"></div>
+        </div>
+
+        <script>
+            window.App = {};
+        </script>
+        <script src="2048.js"></script>
+        <script>
+            const game = new App.Game();
+        </script>
+    </body>
+</html>
